@@ -17,7 +17,7 @@ struct PostRow: View {
                 .font(.largeTitle)
             
             VStack(alignment: .leading) {
-                Text(post.title)
+				Text(post.title)
                     .font(.headline)
                     .lineLimit(Int.max)
                 
@@ -29,11 +29,11 @@ struct PostRow: View {
     }
 }
 
-#if DEBUG
-struct PostCell_Previews : PreviewProvider {
-    static var previews: some View {
-        PostRow(post: Post(id: "", title: "Title", author: "author", url: "https://google.com", subredditNamePrefixed: "r/funny"))
-            .previewLayout(.sizeThatFits)
-    }
-}
-#endif
+//#if DEBUG
+//struct PostCell_Previews : PreviewProvider {
+//    static var previews: some View {
+//        PostRow(post: Post(id: "", title: "Title", author: "author", url: "https://google.com", subredditNamePrefixed: "r/funny"))
+//            .previewLayout(.sizeThatFits)
+//    }
+//}
+//#endif

@@ -11,8 +11,8 @@ import SwiftUI
 struct PostsList: View {
     @ObservedObject var listingViewModel: ListingViewModel
 
-    @State private var query = ""
-    @State private var subredditTitle = "r/all"
+    @State private var query = "devpt"
+    @State private var subredditTitle = "r/devpt"
     
     var body: some View {
         NavigationView {
@@ -22,8 +22,11 @@ struct PostsList: View {
                     self.fetchListing()
                 }
                 ForEach(listingViewModel.posts) { post in
-                    NavigationLink(destination: WebView(request: URLRequest(url: URL(string: post.url)!))) {
-                        PostRow(post: post)
+					NavigationLink(destination: WebView(request: URLRequest(url: post.link))) {
+
+						PostRow(post: post) .onAppear {
+							print("https://www.reddit.com" + post.permalink)
+						}
                     }
                 }
             }

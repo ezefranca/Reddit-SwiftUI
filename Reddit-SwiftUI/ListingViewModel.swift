@@ -13,7 +13,7 @@ import SwiftUI
 class ListingViewModel: ObservableObject {
     let service: RedditService
     
-    @Published var subreddit = "r/all"
+    @Published var subreddit = "r/devpt"
     @Published var posts = [Post]()
     
     init(service: RedditService) {
